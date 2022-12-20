@@ -303,7 +303,7 @@
 </style>
 
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
+<div *ngIf="window.location.pathname === '/'" class="toolbar" role="banner">
   <img
     width="40"
     alt="Angular Logo"
@@ -329,7 +329,7 @@
     </a>
 </div>
 
-<div class="content" role="main">
+<div *ngIf="window.location.pathname === '/'" class="content" role="main">
 
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
@@ -485,5 +485,5 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
+<app-navbar *ngIf="window.location.pathname !== '/'"></app-navbar>
 <router-outlet></router-outlet>
