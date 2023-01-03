@@ -1,0 +1,5 @@
+<p>employee-info works!</p>
+<button (click)="getEmployeesFromService()">get info</button>
+<ul class="list-group">
+    <li *ngFor="let employee of employees" class="list-group-info">{{employee?.name}} - {{employee?.code}} - {{employee?.email}}</li>
+</ul>
