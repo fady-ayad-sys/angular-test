@@ -16,5 +16,9 @@ export class DataService {
     return this.employees;
   }
 
+  getEmptyArray(): any[] {
+    return [];
+  }
+
   constructor() { }
 }

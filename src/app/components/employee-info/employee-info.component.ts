@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -7,19 +7,26 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./employee-info.component.scss'],
   providers: [DataService]
 })
-export class EmployeeInfoComponent implements OnInit{
+export class EmployeeInfoComponent implements OnInit, OnChanges{
 
   employees: any[]  = [];
 
-  constructor(private dstervice: DataService) {
+  constructor(private dservice: DataService) {
 
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    //console.log(changes);
   }
   ngOnInit(): void {
     //this.getEmployeesFromService();
   }
 
   getEmployeesFromService(): void {
-    this.employees = this.dstervice.getEmployees();
+    this.employees = this.dservice.getEmployees();
+  }
+
+  getEmptyArrayFromService(): void {
+    this.employees = this.dservice.getEmptyArray();
   }
 
   

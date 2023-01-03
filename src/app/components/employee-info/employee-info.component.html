@@ -1,5 +1,9 @@
 <p>employee-info works!</p>
-<button (click)="getEmployeesFromService()">get info</button>
+<button (click)="(employees!.length > 0) ? getEmptyArrayFromService() : getEmployeesFromService()">call service</button>
+<div [ngSwitch]="employees!.length">
+    <div *ngSwitchCase="0">click to fetch data 🔃</div>
+    <div *ngSwitchDefault>data fetched ✅</div>
+</div>
 <ul class="list-group">
     <li *ngFor="let employee of employees" class="list-group-info">{{employee?.name}} - {{employee?.code}} - {{employee?.email}}</li>
 </ul>
