@@ -1,0 +1,34 @@
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+npm install -g typescript
+npm install -g @angular/cli
+ng version
+
+ng new hello-world
+ng serve
+
+- data binding  {{varName}}
+- property binding  [src]="imgSrc"
+- event binding  (click)="onBtnClicked()"
+- two way data binding (usually on forms)    (ngSubmit)="onFormSubmit(login)" / #login="ngForm" (ngSubmit)="onFormSubmit(login)
+- template variable:  <input #name="ngModel"
+- ng g c components/mycomponent
+- angular forms
+- conditional rendering:  <p *ngIf="name.errors?.minlength">first name is too short</p>
+
+- Routing
+- <base href="/"> index.html
+
+- Angular Services: ng g s services/data
+
+-Angular NgSwitch: 
+<div [ngSwitch]="employees!.length">
+    <div *ngSwitchCase="0">click to fetch data 🔃</div>
+    <div *ngSwitchDefault>data fetched ✅</div>
+</div>
+
+- Angular Pipe: a function that take an input value, process it and return another value
+- angular built in pipes: datepipe, uppercasepipe, lowercasepipe, currencypipe, decimalpipe, percentpipe {{text | uppercase}}
+-custom pipes: create a class -> decorarte @Pipe -> implement the transform -> return data -> add pipe class to the declaration array
+- ng g pipe pipes/add-emoji
+
+- Angular material: ng add @angular/material
