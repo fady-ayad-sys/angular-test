@@ -1,5 +1,5 @@
 <p>employee-info works!</p>
-<button (click)="(employees!.length > 0) ? getEmptyArrayFromService() : getEmployeesFromService()">call service</button>
+<button (click)="(employees!.length > 0) ? getEmptyArrayFromService() : getEmployeesFromService()">{{(employees!.length > 0) ? "reset" : "call service" | uppercase}}</button>
 <div [ngSwitch]="employees!.length">
     <div *ngSwitchCase="0">click to fetch data 🔃</div>
     <div *ngSwitchDefault>data fetched ✅</div>
