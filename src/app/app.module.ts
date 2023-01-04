@@ -11,6 +11,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { EmployeeInfoComponent } from './components/employee-info/employee-info.component';
 import { PipesComponent } from './components/pipes/pipes.component';
 import { AddEmojiPipe } from './pipes/add-emoji.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { AddEmojiPipe } from './pipes/add-emoji.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
